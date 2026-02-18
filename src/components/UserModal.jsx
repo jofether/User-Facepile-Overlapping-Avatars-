@@ -1,14 +1,30 @@
 import React from 'react';
 
 function UserModal({ user, onClose, onRemove }) {
+  const getStatusColor = (status) => {
+    switch(status) {
+      case 'online': return 'bg-green-500';
+      case 'idle': return 'bg-yellow-500';
+      default: return 'bg-slate-600';
+    }
+  };
+
+  const getStatusText = (status) => {
+    switch(status) {
+      case 'online': return 'Online';
+      case 'idle': return 'Idle';
+      default: return 'Offline';
+    }
+  };
+
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 backdrop-blur-sm">
-      <div className="bg-slate-800 border border-slate-700 rounded-2xl shadow-2xl max-w-sm w-full animate-slideUp">
+    <div className="fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50 backdrop-blur-sm">
+      <div className="bg-slate-800 border border-slate-700 rounded-3xl shadow-2xl max-w-md w-full animate-slideUp overflow-hidden">
         {/* Header */}
-        <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 p-6 rounded-t-2xl">
+        <div className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 p-8 rounded-t-3xl">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-white hover:text-slate-200 transition text-2xl"
+            className="absolute top-4 right-4 text-white hover:bg-white/20 hover:text-white transition text-3xl w-10 h-10 flex items-center justify-center rounded-full"
           >
             ×
           </button>
@@ -17,48 +33,74 @@ function UserModal({ user, onClose, onRemove }) {
         {/* Content */}
         <div className="p-8 text-center">
           {/* Avatar */}
-          <div className="mb-6">
+          <div className="mb-6 relative inline-block">
             <img
               src={user.img}
               alt={user.name}
-              className="w-24 h-24 rounded-full border-4 border-blue-500 mx-auto shadow-lg"
+              className="w-28 h-28 rounded-full border-4 border-blue-500 shadow-xl"
             />
+            {/* Status indicator - larger */}
+            <div className={`absolute bottom-2 right-2 w-6 h-6 rounded-full border-3 border-slate-800 ${getStatusColor(user.status)} animate-pulse`}></div>
           </div>
 
           {/* User Info */}
-          <h2 className="text-2xl font-bold text-white mb-2">{user.name}</h2>
-          <p className="text-blue-400 font-medium mb-6">{user.role}</p>
+          <h2 className="text-3xl font-bold text-white mb-1">{user.name}</h2>
+          <p className="text-blue-400 font-medium mb-1 text-lg">{user.role}</p>
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <p className="text-slate-400 text-sm">{user.department}</p>
+            <span className={`inline-block w-2 h-2 rounded-full ${getStatusColor(user.status)}`}></span>
+            <p className="text-slate-400 text-sm">{getStatusText(user.status)}</p>
+          </div>
+
+          {/* Divider */}
+          <div className="h-px bg-slate-700 mb-6"></div>
 
           {/* Stats */}
-          <div className="bg-slate-700 rounded-lg p-4 mb-6">
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <p className="text-slate-400 text-sm">Contributions</p>
-                <p className="text-white font-bold text-lg">47</p>
-              </div>
-              <div>
-                <p className="text-slate-400 text-sm">Tasks Done</p>
-                <p className="text-white font-bold text-lg">23</p>
-              </div>
+          <div className="grid grid-cols-2 gap-4 mb-6">
+            <div className="bg-slate-700/50 rounded-xl p-4 border border-slate-600/50">
+              <p className="text-slate-400 text-sm font-medium">Contributions</p>
+              <p className="text-white font-bold text-2xl mt-2">{user.contributions}</p>
+            </div>
+            <div className="bg-slate-700/50 rounded-xl p-4 border border-slate-600/50">
+              <p className="text-slate-400 text-sm font-medium">Tasks Done</p>
+              <p className="text-white font-bold text-2xl mt-2">{Math.round(user.contributions * 0.7)}</p>
             </div>
           </div>
 
-          {/* Description */}
-          <p className="text-slate-400 text-sm mb-6">
-            Active team member with strong technical skills and excellent collaboration abilities.
-          </p>
+          {/* Skills/Bio */}
+          <div className="bg-slate-700/30 rounded-xl p-4 mb-6 border border-slate-600/30">
+            <p className="text-slate-300 text-sm leading-relaxed">
+              Dedicated team member with expertise in {user.department.toLowerCase()}. Excellent communication skills and a passion for delivering high-quality results. Always ready to support the team and mentor junior members.
+            </p>
+          </div>
+
+          {/* Quick Stats */}
+          <div className="flex justify-around mb-6 bg-slate-700/20 rounded-xl p-4">
+            <div>
+              <p className="text-slate-400 text-xs">Reliability</p>
+              <p className="text-green-400 font-bold">98%</p>
+            </div>
+            <div>
+              <p className="text-slate-400 text-xs">Response Time</p>
+              <p className="text-blue-400 font-bold">~4h</p>
+            </div>
+            <div>
+              <p className="text-slate-400 text-xs">Performance</p>
+              <p className="text-purple-400 font-bold">⭐⭐⭐</p>
+            </div>
+          </div>
 
           {/* Buttons */}
           <div className="flex gap-3">
             <button
               onClick={onClose}
-              className="flex-1 py-2 bg-slate-700 text-white rounded-lg hover:bg-slate-600 transition"
+              className="flex-1 py-3 bg-slate-700 text-white rounded-lg hover:bg-slate-600 transition font-medium duration-200"
             >
               Close
             </button>
             <button
               onClick={() => onRemove(user.id)}
-              className="flex-1 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition"
+              className="flex-1 py-3 bg-red-600/90 text-white rounded-lg hover:bg-red-700 transition font-medium duration-200"
             >
               Remove
             </button>
