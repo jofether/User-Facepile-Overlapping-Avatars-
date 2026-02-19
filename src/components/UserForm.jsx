@@ -28,8 +28,6 @@ function UserForm({ onAddUser, onCancel }) {
 
   return (
     <div className="mt-8 bg-slate-800/50 border border-slate-700/50 p-8 rounded-2xl shadow-xl animate-slideUp -z-50 relative">
-      {/* [BUG - LAYERS] Form has -z-50, appears completely behind all content, unclickable */}
-      {/* [FIX] Change -z-50 to z-50 to bring form to front */}
       <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2"><span>✨</span> Add New Team Member</h3>
       
       <form onSubmit={handleSubmit} className="space-y-5">
@@ -66,8 +64,6 @@ function UserForm({ onAddUser, onCancel }) {
               onChange={handleChange}
               className="w-full px-4 py-2.5 bg-slate-700 border border-slate-600 text-white rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition h-96"
             >
-              {/* [BUG - TYPO] Invalid class 'h-96' on select creates massive dropdown */}
-              {/* [FIX] Remove h-96, height shouldn't apply to select elements */}
               <option>Engineering</option>
               <option>Design</option>
               <option>Quality</option>
@@ -91,8 +87,6 @@ function UserForm({ onAddUser, onCancel }) {
         </div>
 
         <div className="flex gap-3">
-          {/* [BUG - SPACING] Extreme negative margin pushes button way outside form boundaries */}
-          {/* [FIX] Remove -mb-16, use mb-0 instead */}
           <button
             type="submit"
             className="flex-1 py-3 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-lg font-semibold hover:from-emerald-700 hover:to-emerald-800 transition shadow-lg hover:shadow-emerald-500/50 transform hover:scale-105 duration-200 -mb-16"

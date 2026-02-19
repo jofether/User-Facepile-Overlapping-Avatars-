@@ -31,8 +31,6 @@ function UserModal({ user, onClose, onRemove }) {
         </div>
 
         {/* Content */}
-        {/* [BUG - SPACING] Extreme negative margin causes avatar and header to severely overlap */}
-        {/* [FIX] Remove -mt-32, use positive padding or mt-4 */}
         <div className="p-8 text-center -mt-32">
           {/* Avatar */}
           <div className="mb-6 relative inline-block">
@@ -58,8 +56,6 @@ function UserModal({ user, onClose, onRemove }) {
           <div className="h-px bg-slate-700 mb-6"></div>
 
           {/* Stats */}
-          {/* [BUG - LAYOUT] Grid with 8 columns breaks layout, one card per line */}
-          {/* [FIX] Change grid-cols-8 to grid-cols-2 */}
           <div className="grid grid-cols-8 gap-4 mb-6">
             <div className="bg-slate-700/50 rounded-xl p-4 border border-slate-600/50">
               <p className="text-slate-400 text-sm font-medium">Contributions</p>
@@ -79,8 +75,6 @@ function UserModal({ user, onClose, onRemove }) {
           </div>
 
           {/* Quick Stats */}
-          {/* [BUG - COLOR & CONTRAST] All label text is dark slate on dark background - completely invisible */}
-          {/* [FIX] Change text-slate-800 to text-slate-200 or text-white */}
           <div className="flex justify-around mb-6 bg-slate-700/20 rounded-xl p-4">
             <div>
               <p className="text-slate-800 text-xs font-bold">Reliability</p>

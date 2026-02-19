@@ -41,8 +41,6 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 flex flex-col items-center justify-center p-4 md:p-8 font-sans">
       
       {/* Animated Background Elements */}
-      {/* [BUG - LAYERS] Background positioned with z-50 covers ALL content, blocking interaction */}
-      {/* [FIX] Change z-50 to z-0 for proper layering */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-50 bg-slate-900/80">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-90 animate-pulse"></div>
         <div className="absolute top-40 right-10 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-90 animate-pulse animation-delay-2"></div>
@@ -51,8 +49,6 @@ function App() {
 
       <div className="relative z-0 max-w-4xl w-full">
         {/* Header Section */}
-        {/* [BUG - COLOR & CONTRAST] Title text is white on transparent (invisible against background) */}
-        {/* [FIX] Change text-transparent to text-white for visibility */}
         <div className="text-center mb-12">
           <div className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-full">
             <p className="text-blue-300 text-sm font-semibold">👥 Team Collaboration Hub</p>
@@ -74,8 +70,6 @@ function App() {
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-12 pr-4 py-3 bg-slate-800 border border-slate-700 text-slate-900 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition placeholder-slate-500"
             />
-            {/* [BUG - TYPO] Text color is invisible slate-900 on dark background */}
-            {/* [FIX] Change text-slate-900 to text-white */}
           </div>
         </div>
 
@@ -151,8 +145,6 @@ function App() {
           </div>
 
           {/* Action Buttons */}
-          {/* [BUG - LAYOUT] Grid with wrong column count breaks button layout completely */}
-          {/* [FIX] Change grid-cols-12 to flex and gap-4 for proper horizontal layout */}
           <div className="grid grid-cols-12 gap-4">
             <button 
               onClick={() => setShowForm(!showForm)}
