@@ -2,6 +2,7 @@
   "repository": "User Facepile (Overlapping Avatars)",
   "bugs": [
     {
+      "comment": "Bug #1 - z-index",
       "bug_category": "Layers",
       "bug_type": "z-index",
       "file_modified": "src/App.jsx",
@@ -12,11 +13,12 @@
       "bounding_box": {
         "x": 0,
         "y": 0,
-        "width": 0,
-        "height": 0
+        "width": 1280,
+        "height": 720
       }
     },
     {
+      "comment": "Bug #2 - opacity",
       "bug_category": "Color",
       "bug_type": "opacity",
       "file_modified": "src/App.jsx",
@@ -25,13 +27,14 @@
       "buggy_code": "<div className=\"absolute top-20 left-10 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-90 animate-pulse\"></div>",
       "css_selector": ".opacity-90.top-20",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 40,
+        "y": 80,
+        "width": 288,
+        "height": 288
       }
     },
     {
+      "comment": "Bug #3 - z-index",
       "bug_category": "Layers",
       "bug_type": "z-index",
       "file_modified": "src/App.jsx",
@@ -40,13 +43,14 @@
       "buggy_code": "<div className=\"relative z-0 max-w-4xl w-full\">",
       "css_selector": ".relative.z-0",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 192,
+        "y": 32,
+        "width": 896,
+        "height": 818
       }
     },
     {
+      "comment": "Bug #4 - text-color",
       "bug_category": "Color",
       "bug_type": "text-color",
       "file_modified": "src/App.jsx",
@@ -55,13 +59,14 @@
       "buggy_code": "<h1 className=\"text-5xl md:text-6xl font-bold text-transparent mb-4 bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400\">Team Workspace</h1>",
       "css_selector": ".text-5xl.text-transparent",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 192,
+        "y": 86,
+        "width": 896,
+        "height": 60
       }
     },
     {
+      "comment": "Bug #5 - text-color",
       "bug_category": "Color",
       "bug_type": "text-color",
       "file_modified": "src/App.jsx",
@@ -70,13 +75,14 @@
       "buggy_code": "<p className=\"text-slate-900 text-lg md:text-xl font-black\">Collaborate, manage, and grow with your exceptional team</p>",
       "css_selector": ".text-slate-900",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 192,
+        "y": 162,
+        "width": 896,
+        "height": 28
       }
     },
     {
+      "comment": "Bug #6 - grid",
       "bug_category": "Layout",
       "bug_type": "grid",
       "file_modified": "src/App.jsx",
@@ -85,13 +91,14 @@
       "buggy_code": "<div className=\"grid grid-cols-12 gap-4\">",
       "css_selector": ".grid.grid-cols-12",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 233,
+        "y": 738,
+        "width": 814,
+        "height": 72
       }
     },
     {
+      "comment": "Bug #7 - z-index",
       "bug_category": "Layers",
       "bug_type": "z-index",
       "file_modified": "src/components/UserForm.jsx",
@@ -100,13 +107,14 @@
       "buggy_code": "<div className=\"mt-8 bg-slate-800/50 border border-slate-700/50 p-8 rounded-2xl shadow-xl animate-slideUp -z-50 relative\">",
       "css_selector": ".animate-slideUp.-z-50",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 416,
+        "y": 3,
+        "width": 448,
+        "height": 714
       }
     },
     {
+      "comment": "Bug #8 - height",
       "bug_category": "Spacing",
       "bug_type": "height",
       "file_modified": "src/components/UserForm.jsx",
@@ -115,13 +123,14 @@
       "buggy_code": "className=\"w-full px-4 py-2.5 bg-slate-700 border border-slate-600 text-white rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition h-96\"",
       "css_selector": "select.h-96",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 225,
+        "y": 1186,
+        "width": 407,
+        "height": 384
       }
     },
     {
+      "comment": "Bug #9 - margin",
       "bug_category": "Spacing",
       "bug_type": "margin",
       "file_modified": "src/components/UserForm.jsx",
@@ -130,13 +139,14 @@
       "buggy_code": "className=\"flex-1 py-3 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-lg font-semibold hover:from-emerald-700 hover:to-emerald-800 transition shadow-lg hover:shadow-emerald-500/50 transform hover:scale-105 duration-200 -mb-16\"",
       "css_selector": "button.flex-1.-mb-16",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 225,
+        "y": 1590,
+        "width": 409,
+        "height": 112
       }
     },
     {
+      "comment": "Bug #10 - margin",
       "bug_category": "Spacing",
       "bug_type": "margin",
       "file_modified": "src/components/UserModal.jsx",
@@ -145,10 +155,10 @@
       "buggy_code": "<div className=\"p-8 text-center -mt-32\">",
       "css_selector": ".text-center.-mt-32",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 192,
+        "y": 32,
+        "width": 896,
+        "height": 158
       }
     }
   ]
