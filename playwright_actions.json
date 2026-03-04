@@ -1,0 +1,20 @@
+{
+  "actions": [
+    {
+      "name": "bug-7-OpenForm",
+      "selector": "button.from-blue-600.to-blue-700"
+    },
+    {
+      "name": "bug-8-OpenForm",
+      "selector": "button.from-blue-600.to-blue-700"
+    },
+    {
+      "name": "bug-9-OpenForm",
+      "selector": "button.from-blue-600.to-blue-700"
+    },
+    {
+      "name": "bug-10-OpenModal",
+      "selector": "img[alt^=\"User\"]:first-of-type"
+    }
+  ]
+}
