@@ -116,7 +116,7 @@
       "line_number": 30,
       "neg_code": "<div className=\"mt-8 bg-slate-800/50 border border-slate-700/50 p-8 rounded-2xl shadow-xl animate-slideUp\">",
       "pos_code": "<div className=\"mt-8 bg-slate-800/50 border border-slate-700/50 p-8 rounded-2xl shadow-xl animate-slideUp -z-50 relative\">",
-      "css_selector": ".mt-8.bg-slate-800\/50.border.rounded-2xl",
+      "css_selector": ".mt-8.bg-slate-800.border.rounded-2xl",
       "bounding_box": {
         "x": 416,
         "y": 500,
@@ -167,7 +167,7 @@
       "line_number": 34,
       "neg_code": "<div className=\"p-8 text-center\">",
       "pos_code": "<div className=\"p-8 text-center -mt-32\">",
-      "css_selector": "div.fixed >> .p-8.text-center",
+      "css_selector": ".p-8.text-center",
       "bounding_box": {
         "x": 192,
         "y": 1500,
